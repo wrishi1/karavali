@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karavali Enterprises | Luxury Villas & Digital Loan Solutions</title>
+    <title>Karavali Enterprises | Luxury Villas & Complete Loan Solutions</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -19,15 +19,17 @@
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
                         brand: {
+                            navyDark: '#070B14',
+                            navyCard: '#0F172A',
                             gold: '#D4AF37',
+                            goldBright: '#E2B714',
                             goldLight: '#F3E5AB',
-                            goldDark: '#AA7C11',
+                            goldDark: '#9A7B1C',
                             emerald: '#059669',
-                            darkBg: '#090D16',
-                            cardBg: 'rgba(17, 24, 39, 0.65)',
                         }
                     }
                 }
@@ -36,58 +38,87 @@
     </script>
     <style>
         body {
-            background-color: #080B11;
+            background-color: #070B14;
             color: #E2E8F0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
         }
+
         /* Glassmorphism Styles */
         .glass-card {
-            background: rgba(17, 25, 40, 0.6);
+            background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
         .glass-nav {
-            background: rgba(8, 11, 17, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(7, 11, 20, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
         .glass-input {
             background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             color: #FFFFFF;
+            transition: all 0.3s ease;
         }
         .glass-input:focus {
             outline: none;
             border-color: #D4AF37;
             background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
         }
+
+        /* Gradient Texts & Gold Glow Effects */
         .gold-gradient-text {
-            background: linear-gradient(135deg, #FFF5C0 0%, #D4AF37 50%, #9A7B1C 100%);
+            background: linear-gradient(135deg, #FFF6CD 0%, #E2B714 40%, #D4AF37 70%, #8A6710 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gold-button {
-            background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #E2B714 0%, #D4AF37 50%, #B8860B 100%);
+            color: #070B14;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .gold-button:hover {
-            background: linear-gradient(135deg, #E6C200 0%, #D4AF37 100%);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #FFF099 0%, #E2B714 50%, #D4AF37 100%);
+            box-shadow: 0 0 25px rgba(226, 183, 20, 0.45);
             transform: translateY(-2px);
         }
-        .glow-emerald {
-            box-shadow: 0 0 25px rgba(5, 150, 105, 0.25);
+        .gold-border-glow:hover {
+            border-color: rgba(226, 183, 20, 0.6);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
         }
-        /* Custom scrollbar */
+
+        /* Custom Slider Styling for Calculator */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            height: 6px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #E2B714;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(226, 183, 20, 0.8);
+            transition: all 0.2s ease;
+        }
+        input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #080B11;
+            background: #070B14;
         }
         ::-webkit-scrollbar-thumb {
             background: #1E293B;
@@ -98,45 +129,55 @@
         }
     </style>
 </head>
-<body class="antialiased text-slate-200">
+<body class="antialiased text-slate-200 selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- Sticky Navigation Bar -->
     <nav class="fixed top-0 left-0 w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Brand Logo -->
-                <a href="#home" class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center font-bold text-slate-950 text-xl shadow-lg">
-                        K
+                
+                <!-- Logo & Branding -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 flex items-center justify-center font-bold text-slate-950 text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-house-chimney text-slate-950"></i>
                     </div>
                     <div>
-                        <span class="text-xl font-extrabold tracking-wider text-white block leading-none">KARAVALI</span>
-                        <span class="text-[10px] tracking-[0.2em] text-amber-400 font-semibold block mt-1 uppercase">Enterprises</span>
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-xl sm:text-2xl font-extrabold tracking-wider text-white font-serif">KARAVALI</span>
+                        </div>
+                        <span class="text-[9px] sm:text-[10px] tracking-[0.25em] text-amber-400 font-semibold block uppercase">Enterprises</span>
                     </div>
                 </a>
 
-                <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                    <a href="#home" class="hover:text-amber-400 transition-colors duration-200">Home</a>
-                    <a href="#villas" class="hover:text-amber-400 transition-colors duration-200">Luxury Homes</a>
-                    <a href="#why-us" class="hover:text-amber-400 transition-colors duration-200">Why Us</a>
-                    <a href="#contact" class="hover:text-amber-400 transition-colors duration-200">Contact</a>
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-7 text-xs font-semibold tracking-wide uppercase">
+                    <a href="#home" class="text-slate-300 hover:text-amber-400 transition">Home</a>
+                    <a href="#properties" class="text-slate-300 hover:text-amber-400 transition">Luxury Properties</a>
+                    <a href="#loans" class="text-slate-300 hover:text-amber-400 transition">Loan Solutions</a>
+                    <a href="#calculator" class="text-slate-300 hover:text-amber-400 transition">EMI Calculator</a>
+                    <a href="#why-us" class="text-slate-300 hover:text-amber-400 transition">Why Us</a>
+                    <a href="#contact" class="text-slate-300 hover:text-amber-400 transition">Contact</a>
                 </div>
 
-                <!-- Action Button -->
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="https://wa.me/919606017160?text=Hello%20Karavali%20Enterprises,%20I%20am%20interested%20in%20your%20services." target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 transition text-sm font-semibold">
-                        <i class="fa-brands fa-whatsapp text-base"></i>
-                        <span>9606017160</span>
+                <!-- Action CTA Header Buttons -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="tel:9606017160" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900 border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 transition text-xs font-bold">
+                        <i class="fa-solid fa-phone text-amber-400"></i>
+                        <span>96060 17160</span>
                     </a>
-                    <button onclick="openModal()" class="gold-button text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm flex items-center gap-2">
-                        <span>Get Started</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <a href="https://wa.me/919606017160?text=Hello%20Karavali%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20your%20Loan%20%26%20Property%20Solutions." target="_blank" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-600/30 transition text-xs font-bold">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <button onclick="openModal()" class="gold-button font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 shadow-md">
+                        <span>Apply Now</span>
                     </button>
                 </div>
 
                 <!-- Mobile Hamburger Button -->
-                <div class="md:hidden flex items-center">
+                <div class="lg:hidden flex items-center gap-2">
+                    <a href="tel:9606017160" class="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
                     <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
@@ -144,460 +185,744 @@
             </div>
         </div>
 
-        <!-- Mobile Drawer Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-slate-800 px-4 pt-4 pb-6 space-y-3">
-            <a href="#home" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/60">Home</a>
-            <a href="#villas" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/60">Luxury Homes</a>
-            <a href="#why-us" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/60">Why Us</a>
-            <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/60">Contact Us</a>
-            <div class="pt-4 flex flex-col gap-3">
-                <a href="https://wa.me/919606017160?text=Hello%20Karavali%20Enterprises,%20I%20am%20interested%20in%20your%20services." target="_blank" class="w-full text-center flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 text-sm font-semibold">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Chat on WhatsApp (+91 9606017160)</span>
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-t border-amber-500/20 px-4 pt-4 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800">Home</a>
+            <a href="#properties" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800">Luxury Properties</a>
+            <a href="#loans" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800">Loan Solutions</a>
+            <a href="#calculator" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800">EMI Calculator</a>
+            <a href="#why-us" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800">Why Choose Us</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800">Contact Us</a>
+            <div class="pt-3 flex flex-col gap-2">
+                <a href="tel:8105951686" class="w-full text-center py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 text-xs font-bold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call: 81059 51686
                 </a>
-                <button onclick="openModal()" class="w-full gold-button text-slate-950 font-bold py-2.5 rounded-xl text-sm">
-                    Inquire Now
+                <a href="tel:9606017160" class="w-full text-center py-2.5 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 text-xs font-bold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call: 96060 17160
+                </a>
+                <button onclick="openModal()" class="w-full gold-button font-bold py-2.5 rounded-xl text-xs mt-1">
+                    Apply For Loan / Property
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
-        <!-- Background Overlay Image -->
+    <section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+        <!-- Background Lighting and Visual FX -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" alt="Luxury Home Background" class="w-full h-full object-cover object-center opacity-30">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080B11] via-[#080B11]/80 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-[#080B11] via-transparent to-[#080B11]"></div>
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" alt="Luxury Villa Architecture" class="w-full h-full object-cover opacity-25">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#070B14] via-[#070B14]/85 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#070B14] via-[#070B14]/60 to-transparent"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column Text -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <!-- Badge Tagline -->
+                    
+                    <!-- Tagline Badge -->
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-amber-500/30 text-amber-400 text-xs sm:text-sm font-semibold tracking-wide">
-                        <i class="fa-solid fa-certificate text-amber-400"></i>
-                        <span>Zero Paper Work Real Estate & Loan Services</span>
+                        <i class="fa-solid fa-gem text-amber-400"></i>
+                        <span>Loan & Property Solutions — <i>"Your Dreams... Our Support..."</i></span>
                     </div>
 
-                    <!-- Main Headline -->
+                    <!-- Main Poster Headline -->
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-                        Luxury Living & <br class="hidden sm:inline">
-                        <span class="gold-gradient-text">Premium Real Estate</span>
+                        Luxury Villas & Homes <br>
+                        <span class="gold-gradient-text font-serif italic">Build Your Future</span>
                     </h1>
 
-                    <!-- Subtitle -->
-                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                        Experience hassle-free real estate acquisitions with zero paperwork. From dream luxury villas to premium coastal homes, we handle everything with 100% digital efficiency.
+                    <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Own the luxury home you always dreamed of with <b>Zero Paperwork</b> and total financing support. From Home & Business Loans to MSME Funding — we are your financial partner for a better tomorrow.
                     </p>
 
-                    <!-- CTAs -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#villas" class="w-full sm:w-auto gold-button text-slate-950 font-bold px-8 py-4 rounded-xl text-base text-center shadow-lg">
-                            Explore Luxury Properties
+                    <!-- Feature Badges directly from Poster -->
+                    <div class="grid grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0 py-2">
+                        <div class="glass-card p-3 rounded-2xl text-center border-amber-500/20 hover:border-amber-500/50 transition">
+                            <i class="fa-solid fa-house-laptop text-amber-400 text-xl mb-1.5 block"></i>
+                            <span class="text-xs font-bold text-white block">Premium Properties</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-2xl text-center border-amber-500/20 hover:border-amber-500/50 transition">
+                            <i class="fa-solid fa-user-shield text-amber-400 text-xl mb-1.5 block"></i>
+                            <span class="text-xs font-bold text-white block">Trusted Developers</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-2xl text-center border-amber-500/20 hover:border-amber-500/50 transition">
+                            <i class="fa-solid fa-file-signature text-amber-400 text-xl mb-1.5 block"></i>
+                            <span class="text-xs font-bold text-white block">Transparent Process</span>
+                        </div>
+                    </div>
+
+                    <!-- Dual CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#properties" class="w-full sm:w-auto gold-button font-bold px-8 py-4 rounded-xl text-sm text-center shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+                            <span>Explore Properties</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="#contact" class="w-full sm:w-auto glass-card hover:bg-slate-800/80 text-white font-semibold px-8 py-4 rounded-xl text-base text-center border border-white/10 transition">
-                            Get In Touch
+                        <a href="#loans" class="w-full sm:w-auto glass-card hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-xl text-sm text-center border border-amber-500/30 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-hand-holding-dollar text-amber-400"></i>
+                            <span>Apply For Loan</span>
                         </a>
                     </div>
 
-                    <!-- Highlight Features Mini Row -->
-                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80">
-                        <div class="text-center lg:text-left">
-                            <h4 class="text-2xl font-bold text-amber-400">100%</h4>
-                            <p class="text-xs text-slate-400">Paperless Process</p>
-                        </div>
-                        <div class="text-center lg:text-left">
-                            <h4 class="text-2xl font-bold text-emerald-400">Verified</h4>
-                            <p class="text-xs text-slate-400">Legal Properties</p>
-                        </div>
-                        <div class="text-center lg:text-left">
-                            <h4 class="text-2xl font-bold text-white">Prime</h4>
-                            <p class="text-xs text-slate-400">Coastal Properties</p>
-                        </div>
+                    <!-- Direct Hotline Numbers Bar -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 border-t border-slate-800/80 text-xs text-slate-400">
+                        <span class="font-semibold text-slate-300">Direct Financial Assistance:</span>
+                        <a href="tel:8105951686" class="text-amber-400 font-bold hover:underline flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone text-xs"></i> 81059 51686
+                        </a>
+                        <a href="tel:9606017160" class="text-amber-400 font-bold hover:underline flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone text-xs"></i> 96060 17160
+                        </a>
                     </div>
                 </div>
 
-                <!-- Hero Interactive Floating Card -->
+                <!-- Hero Interactive Floating Display Card -->
                 <div class="lg:col-span-5">
-                    <div class="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 relative shadow-2xl">
-                        <!-- Glow effect -->
-                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                        
-                        <div class="flex items-center justify-between mb-6">
-                            <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Featured Listing</span>
-                            <span class="bg-emerald-500/20 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-semibold border border-emerald-500/30">Available Now</span>
+                    <div class="glass-card p-6 sm:p-7 rounded-3xl border-amber-500/30 relative shadow-2xl">
+                        <!-- Poster Badge Overlay -->
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-amber-500/20 text-amber-300 text-xs px-3 py-1 rounded-full font-bold border border-amber-500/40 uppercase tracking-wider">
+                                Featured Property
+                            </span>
+                            <span class="text-emerald-400 text-xs font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-circle text-[8px] animate-pulse"></i> Zero Paperwork Loan Ready
+                            </span>
                         </div>
 
-                        <div class="relative rounded-2xl overflow-hidden mb-6 group">
-                            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80" alt="Villa Preview" class="w-full h-52 object-cover transform group-hover:scale-105 transition duration-500">
-                            <div class="absolute top-3 left-3 bg-slate-950/70 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-semibold text-white">
-                                <i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> Karavali Coastline
+                        <!-- Main Image -->
+                        <div class="relative rounded-2xl overflow-hidden mb-5 group">
+                            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=80" alt="Karavali Coastal Villa" class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-semibold text-white border border-white/10">
+                                <i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> Coastal Highway, Karavali
                             </div>
                         </div>
 
-                        <h3 class="text-xl font-bold text-white mb-2">The Royal Azure Coastal Villa</h3>
-                        <p class="text-xs text-slate-300 mb-4 line-clamp-2">4 BHK Modern luxury smart residence featuring private infinity pool & panoramic seaside view.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">The Royal Azure Luxury Residence</h3>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            4 BHK Sea-view smart villa featuring private infinity pool, sprawling garden, and instant home loan sanction eligibility.
+                        </p>
 
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-                            <span class="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
-                                <i class="fa-solid fa-shield-halved text-emerald-400"></i> Clear Title & Ready
-                            </span>
-                            <button onclick="openModal('The Royal Azure Coastal Villa')" class="gold-button text-slate-950 font-bold px-4 py-2 rounded-xl text-xs">
-                                Request Price & Details
-                            </button>
+                        <!-- Quick Loan Features -->
+                        <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2 mb-5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Home Loan Available:</span>
+                                <span class="font-bold text-amber-400">Up to 90% Funding</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Documentation:</span>
+                                <span class="font-bold text-white">100% Digital Assistance</span>
+                            </div>
                         </div>
+
+                        <button onclick="openModal('The Royal Azure Luxury Residence')" class="w-full gold-button font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+                            <span>Inquire For Price & Loan Eligibility</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Featured Properties Section -->
-    <section id="villas" class="py-20 relative">
+    <section id="properties" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-amber-400 font-bold text-xs uppercase tracking-widest block mb-2">Exclusive Portfolio</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Luxury Villas & Premium Homes</h2>
-                <p class="text-slate-400 text-sm sm:text-base">Handpicked residential architecture designed for opulence, modern comfort, and lifelong investment value.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Luxury Villas & Homes</h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Discover premium residences in prime Karavali locations with verified titles and hassle-free home loan approvals.
+                </p>
             </div>
 
-            <!-- Property Cards Grid -->
+            <!-- Grid of Luxury Villas -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="glass-card rounded-2xl overflow-hidden hover:border-amber-500/40 transition duration-300 flex flex-col group">
+                
+                <!-- Property Card 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-amber-500/50 transition duration-300 flex flex-col group gold-border-glow">
                     <div class="relative overflow-hidden h-64">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Coastal Estate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-4 right-4 bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full shadow">
-                            4 BHK Luxury Villa
+                            4 BHK Villa
                         </span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition">Grand Horizon Modern Estate</h3>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition">Grand Horizon Coastal Estate</h3>
                             <p class="text-xs text-slate-400 mb-4 flex items-center gap-1">
-                                <i class="fa-solid fa-location-dot text-amber-400"></i> Mangalore Beach Road, Karavali
+                                <i class="fa-solid fa-location-dot text-amber-400"></i> Mangalore Waterfront, Karavali
                             </p>
-                            <!-- Key specs -->
-                            <div class="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-slate-900/50 border border-slate-800 text-center mb-6">
+                            <!-- Specs -->
+                            <div class="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-slate-900/60 border border-slate-800 text-center mb-6">
                                 <div>
-                                    <span class="text-xs text-slate-400 block"><i class="fa-solid fa-bed text-amber-400 mr-1"></i> Beds</span>
-                                    <span class="text-sm font-semibold text-white">4 BHK</span>
+                                    <span class="text-[10px] text-slate-400 block"><i class="fa-solid fa-bed text-amber-400 mr-1"></i> Bedrooms</span>
+                                    <span class="text-xs font-bold text-white">4 BHK</span>
                                 </div>
                                 <div>
-                                    <span class="text-xs text-slate-400 block"><i class="fa-solid fa-bath text-amber-400 mr-1"></i> Baths</span>
-                                    <span class="text-sm font-semibold text-white">5 Bath</span>
+                                    <span class="text-[10px] text-slate-400 block"><i class="fa-solid fa-bath text-amber-400 mr-1"></i> Baths</span>
+                                    <span class="text-xs font-bold text-white">5 Bath</span>
                                 </div>
                                 <div>
-                                    <span class="text-xs text-slate-400 block"><i class="fa-solid fa-ruler-combined text-amber-400 mr-1"></i> Area</span>
-                                    <span class="text-sm font-semibold text-white">3,850 SqFt</span>
+                                    <span class="text-[10px] text-slate-400 block"><i class="fa-solid fa-ruler-combined text-amber-400 mr-1"></i> Area</span>
+                                    <span class="text-xs font-bold text-white">3,850 SqFt</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between pt-2">
-                            <span class="text-xs text-slate-400 font-medium flex items-center gap-1">
-                                <i class="fa-solid fa-circle-check text-emerald-400"></i> Ready To Move
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-800">
+                            <span class="text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-shield-halved"></i> Pre-Approved Loan
                             </span>
-                            <button onclick="openModal('Grand Horizon Modern Estate')" class="gold-button text-slate-950 font-bold px-4 py-2 rounded-xl text-xs">
+                            <button onclick="openModal('Grand Horizon Coastal Estate')" class="gold-button font-bold px-4 py-2 rounded-xl text-xs">
                                 Inquire For Price
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="glass-card rounded-2xl overflow-hidden hover:border-amber-500/40 transition duration-300 flex flex-col group">
+                <!-- Property Card 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-amber-500/50 transition duration-300 flex flex-col group gold-border-glow">
                     <div class="relative overflow-hidden h-64">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Emerald Bay Villa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-4 right-4 bg-emerald-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full shadow">
-                            Coastal Beach House
+                            3 BHK Beach House
                         </span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition">Emerald Bay Sanctuary</h3>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition">Emerald Bay Beach Sanctuary</h3>
                             <p class="text-xs text-slate-400 mb-4 flex items-center gap-1">
-                                <i class="fa-solid fa-location-dot text-amber-400"></i> Udupi Waterfront Enclave
+                                <i class="fa-solid fa-location-dot text-amber-400"></i> Udupi Beach Enclave, Karavali
                             </p>
-                            <!-- Key specs -->
-                            <div class="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-slate-900/50 border border-slate-800 text-center mb-6">
+                            <!-- Specs -->
+                            <div class="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-slate-900/60 border border-slate-800 text-center mb-6">
                                 <div>
-                                    <span class="text-xs text-slate-400 block"><i class="fa-solid fa-bed text-amber-400 mr-1"></i> Beds</span>
-                                    <span class="text-sm font-semibold text-white">3 BHK</span>
+                                    <span class="text-[10px] text-slate-400 block"><i class="fa-solid fa-bed text-amber-400 mr-1"></i> Bedrooms</span>
+                                    <span class="text-xs font-bold text-white">3 BHK</span>
                                 </div>
                                 <div>
-                                    <span class="text-xs text-slate-400 block"><i class="fa-solid fa-bath text-amber-400 mr-1"></i> Baths</span>
-                                    <span class="text-sm font-semibold text-white">3 Bath</span>
+                                    <span class="text-[10px] text-slate-400 block"><i class="fa-solid fa-bath text-amber-400 mr-1"></i> Baths</span>
+                                    <span class="text-xs font-bold text-white">3 Bath</span>
                                 </div>
                                 <div>
-                                    <span class="text-xs text-slate-400 block"><i class="fa-solid fa-ruler-combined text-amber-400 mr-1"></i> Area</span>
-                                    <span class="text-sm font-semibold text-white">2,900 SqFt</span>
+                                    <span class="text-[10px] text-slate-400 block"><i class="fa-solid fa-ruler-combined text-amber-400 mr-1"></i> Area</span>
+                                    <span class="text-xs font-bold text-white">2,900 SqFt</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between pt-2">
-                            <span class="text-xs text-slate-400 font-medium flex items-center gap-1">
-                                <i class="fa-solid fa-circle-check text-emerald-400"></i> Beach View
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-800">
+                            <span class="text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-shield-halved"></i> Pre-Approved Loan
                             </span>
-                            <button onclick="openModal('Emerald Bay Sanctuary')" class="gold-button text-slate-950 font-bold px-4 py-2 rounded-xl text-xs">
+                            <button onclick="openModal('Emerald Bay Beach Sanctuary')" class="gold-button font-bold px-4 py-2 rounded-xl text-xs">
                                 Inquire For Price
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="glass-card rounded-2xl overflow-hidden hover:border-amber-500/40 transition duration-300 flex flex-col group">
+                <!-- Property Card 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-amber-500/50 transition duration-300 flex flex-col group gold-border-glow">
                     <div class="relative overflow-hidden h-64">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Serene Palms Smart Villa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-4 right-4 bg-sky-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full shadow">
-                            Modern Smart Home
+                            5 BHK Smart Villa
                         </span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition">Serene Palms Villa Residence</h3>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition">Serene Palms Smart Mansion</h3>
                             <p class="text-xs text-slate-400 mb-4 flex items-center gap-1">
-                                <i class="fa-solid fa-location-dot text-amber-400"></i> Surathkal Ridge Heights
+                                <i class="fa-solid fa-location-dot text-amber-400"></i> Surathkal Heights, Karavali
                             </p>
-                            <!-- Key specs -->
-                            <div class="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-slate-900/50 border border-slate-800 text-center mb-6">
+                            <!-- Specs -->
+                            <div class="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-slate-900/60 border border-slate-800 text-center mb-6">
                                 <div>
-                                    <span class="text-xs text-slate-400 block"><i class="fa-solid fa-bed text-amber-400 mr-1"></i> Beds</span>
-                                    <span class="text-sm font-semibold text-white">5 BHK</span>
+                                    <span class="text-[10px] text-slate-400 block"><i class="fa-solid fa-bed text-amber-400 mr-1"></i> Bedrooms</span>
+                                    <span class="text-xs font-bold text-white">5 BHK</span>
                                 </div>
                                 <div>
-                                    <span class="text-xs text-slate-400 block"><i class="fa-solid fa-bath text-amber-400 mr-1"></i> Baths</span>
-                                    <span class="text-sm font-semibold text-white">5 Bath</span>
+                                    <span class="text-[10px] text-slate-400 block"><i class="fa-solid fa-bath text-amber-400 mr-1"></i> Baths</span>
+                                    <span class="text-xs font-bold text-white">5 Bath</span>
                                 </div>
                                 <div>
-                                    <span class="text-xs text-slate-400 block"><i class="fa-solid fa-ruler-combined text-amber-400 mr-1"></i> Area</span>
-                                    <span class="text-sm font-semibold text-white">4,500 SqFt</span>
+                                    <span class="text-[10px] text-slate-400 block"><i class="fa-solid fa-ruler-combined text-amber-400 mr-1"></i> Area</span>
+                                    <span class="text-xs font-bold text-white">4,600 SqFt</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between pt-2">
-                            <span class="text-xs text-slate-400 font-medium flex items-center gap-1">
-                                <i class="fa-solid fa-circle-check text-emerald-400"></i> Premium Amenities
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-800">
+                            <span class="text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-shield-halved"></i> Pre-Approved Loan
                             </span>
-                            <button onclick="openModal('Serene Palms Villa Residence')" class="gold-button text-slate-950 font-bold px-4 py-2 rounded-xl text-xs">
+                            <button onclick="openModal('Serene Palms Smart Mansion')" class="gold-button font-bold px-4 py-2 rounded-xl text-xs">
                                 Inquire For Price
                             </button>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="why-us" class="py-20 relative bg-slate-950/40">
+    <section id="loans" class="py-20 relative bg-slate-950/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <span class="text-amber-400 font-bold text-xs uppercase tracking-widest block">The Karavali Advantage</span>
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest block mb-2">Financial Partner For A Better Tomorrow</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Complete Loan Solutions</h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Quick approval, competitive interest rates, collateral & non-collateral options with end-to-end guidance from application to disbursal.
+                </p>
+            </div>
+
+            <!-- 4 Core Loans Grid matching poster -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Home Loan -->
+                <div class="glass-card p-6 rounded-2xl border-amber-500/20 hover:border-amber-500/60 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Home Loan</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                            Turn your dream home into reality with our flexible home loan solutions and smooth processing.
+                        </p>
+                    </div>
+                    <div>
+                        <button onclick="openModal('Home Loan')" class="w-full py-2.5 rounded-xl bg-slate-900 border border-sky-500/30 text-sky-400 hover:bg-sky-500/20 text-xs font-bold transition">
+                            Apply For Home Loan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Business Loan -->
+                <div class="glass-card p-6 rounded-2xl border-amber-500/20 hover:border-amber-500/60 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Business Loan</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                            Fuel your business growth with flexible working capital and quick collateral or non-collateral business loans.
+                        </p>
+                    </div>
+                    <div>
+                        <button onclick="openModal('Business Loan')" class="w-full py-2.5 rounded-xl bg-slate-900 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-bold transition">
+                            Apply For Business Loan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Loan -->
+                <div class="glass-card p-6 rounded-2xl border-amber-500/20 hover:border-amber-500/60 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Vehicle Loan</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                            Drive your dreams with easy, low-interest, and hassle-free vehicle loans for personal or commercial use.
+                        </p>
+                    </div>
+                    <div>
+                        <button onclick="openModal('Vehicle Loan')" class="w-full py-2.5 rounded-xl bg-slate-900 border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 text-xs font-bold transition">
+                            Apply For Vehicle Loan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- MSME Loan (Highlighted directly from Poster) -->
+                <div class="glass-card p-6 rounded-2xl border-amber-500/50 hover:border-amber-400 transition duration-300 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 font-extrabold text-[10px] px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                        Featured Offer
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">MSME Loan</h3>
+                        <div class="inline-block text-amber-400 font-extrabold text-sm mb-3">
+                            ₹10 Lakhs to ₹15 Crores
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                            Dedicated support for small & medium businesses to expand machinery, infrastructure & operations.
+                        </p>
+                    </div>
+                    <div>
+                        <button onclick="openModal('MSME Loan')" class="w-full gold-button font-bold py-2.5 rounded-xl text-xs">
+                            Apply For MSME Loan
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Key Feature Highlights from Poster -->
+            <div class="mt-12 grid md:grid-cols-3 gap-6 pt-10 border-t border-slate-800">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 text-lg border border-amber-500/20">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-1">Genuine Business Purpose</h4>
+                        <p class="text-xs text-slate-400">We support your real business needs with complete transparency and zero hidden terms.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 text-lg border border-emerald-500/20">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-1">Collateral & Non-Collateral</h4>
+                        <p class="text-xs text-slate-400">Choose the best financing option tailored precisely to your eligibility and collateral status.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 text-lg border border-sky-500/20">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-1">Professional Assistance</h4>
+                        <p class="text-xs text-slate-400">From initial application submission to final bank disbursal, our team is with you at every step.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="calculator" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-amber-400 font-bold text-xs uppercase tracking-widest block">Interactive Estimator</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-                        Why Clients Trust <br>
-                        <span class="gold-gradient-text">Karavali Enterprises</span>
+                        Calculate Your Monthly <br>
+                        <span class="gold-gradient-text font-serif">Loan Installments</span>
                     </h2>
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        We streamline premium real estate acquisitions in the Karavali coastal belt. Our digital-first approach ensures complete transparency and zero physical paperwork friction.
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Plan your home, business, or vehicle loan with complete clarity before applying. Adjust your amount and tenure to view instant EMI estimates.
                     </p>
 
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
-                            <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 font-bold text-lg">
-                                <i class="fa-solid fa-file-shield"></i>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-xs text-slate-300">
+                            <i class="fa-solid fa-check text-emerald-400 text-sm"></i>
+                            <span>Instant Live Computation</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-xs text-slate-300">
+                            <i class="fa-solid fa-check text-emerald-400 text-sm"></i>
+                            <span>Competitive Interest Rates from Top Lenders</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-xs text-slate-300">
+                            <i class="fa-solid fa-check text-emerald-400 text-sm"></i>
+                            <span>Zero Paperwork Pre-Approval Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Calculator Tool -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl border border-amber-500/30">
+                        
+                        <div class="space-y-6">
+                            <!-- Loan Amount Slider -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="text-xs font-semibold text-slate-300">Loan Amount (₹)</label>
+                                    <span id="calc-amount-label" class="text-base font-extrabold text-amber-400">₹ 25,00,000</span>
+                                </div>
+                                <input type="range" id="calc-amount" min="100000" max="150000000" step="100000" value="2500000" class="w-full">
+                                <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                                    <span>₹1 Lakh</span>
+                                    <span>₹15 Crores</span>
+                                </div>
+                            </div>
+
+                            <!-- Interest Rate Slider -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="text-xs font-semibold text-slate-300">Expected Interest Rate (% p.a.)</label>
+                                    <span id="calc-rate-label" class="text-base font-extrabold text-amber-400">8.5%</span>
+                                </div>
+                                <input type="range" id="calc-rate" min="6.5" max="18.0" step="0.1" value="8.5" class="w-full">
+                                <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                                    <span>6.5%</span>
+                                    <span>18.0%</span>
+                                </div>
+                            </div>
+
+                            <!-- Tenure Slider -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="text-xs font-semibold text-slate-300">Tenure (Years)</label>
+                                    <span id="calc-tenure-label" class="text-base font-extrabold text-amber-400">15 Years</span>
+                                </div>
+                                <input type="range" id="calc-tenure" min="1" max="30" step="1" value="15" class="w-full">
+                                <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                                    <span>1 Year</span>
+                                    <span>30 Years</span>
+                                </div>
+                            </div>
+
+                            <!-- Computation Results Display -->
+                            <div class="grid sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800 text-center">
+                                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+                                    <span class="text-[10px] uppercase font-semibold text-slate-400 block mb-1">Monthly EMI</span>
+                                    <span id="res-emi" class="text-lg font-extrabold text-emerald-400">₹ 24,619</span>
+                                </div>
+                                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+                                    <span class="text-[10px] uppercase font-semibold text-slate-400 block mb-1">Total Interest</span>
+                                    <span id="res-interest" class="text-lg font-extrabold text-amber-400">₹ 19,31,420</span>
+                                </div>
+                                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+                                    <span class="text-[10px] uppercase font-semibold text-slate-400 block mb-1">Total Payable</span>
+                                    <span id="res-total" class="text-lg font-extrabold text-white">₹ 44,31,420</span>
+                                </div>
+                            </div>
+
+                            <button onclick="openModal('Loan Application from Calculator')" class="w-full gold-button font-bold py-3.5 rounded-xl text-xs flex items-center justify-center gap-2">
+                                <span>Apply For Loan With These Terms</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="py-20 relative bg-slate-950/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <span class="text-amber-400 font-bold text-xs uppercase tracking-widest block mb-2">Our Promise</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">
+                        Why Choose <br>
+                        <span class="gold-gradient-text font-serif">Karavali Enterprises?</span>
+                    </h2>
+
+                    <div class="space-y-4">
+                        <div class="glass-card p-5 rounded-2xl flex items-start gap-4 border border-slate-800">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 font-bold text-lg">
+                                <i class="fa-solid fa-file-circle-check"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-base mb-1">100% Digital & Paperless</h4>
-                                <p class="text-xs text-slate-400">Eliminate traditional documentation hassle. Process property documentation digitally with complete safety.</p>
+                                <h4 class="text-white font-bold text-sm mb-1">Zero Paperwork Stress</h4>
+                                <p class="text-xs text-slate-400 leading-relaxed">We handle digital documentation end-to-end so you never have to deal with complex physical paperwork.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
-                            <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 font-bold text-lg">
-                                <i class="fa-solid fa-bolt"></i>
+                        <div class="glass-card p-5 rounded-2xl flex items-start gap-4 border border-slate-800">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 font-bold text-lg">
+                                <i class="fa-solid fa-handshake"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-base mb-1">Seamless Transfers</h4>
-                                <p class="text-xs text-slate-400">Fast-tracked property verification, title checks, and legal handovers.</p>
+                                <h4 class="text-white font-bold text-sm mb-1">Transparent & Honest Process</h4>
+                                <p class="text-xs text-slate-400 leading-relaxed">No hidden charges or surprise clauses. Genuine business and personal loan structuring built on trust.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4 p-4 rounded-xl glass-card border border-slate-800">
-                            <div class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 font-bold text-lg">
-                                <i class="fa-solid fa-gem"></i>
+                        <div class="glass-card p-5 rounded-2xl flex items-start gap-4 border border-slate-800">
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 font-bold text-lg">
+                                <i class="fa-solid fa-user-gear"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-base mb-1">Verified Luxury Listings</h4>
-                                <p class="text-xs text-slate-400">Exclusive luxury residential properties and villas along the prime Karavali coast.</p>
+                                <h4 class="text-white font-bold text-sm mb-1">Professional Assistance</h4>
+                                <p class="text-xs text-slate-400 leading-relaxed">From initial consultation to bank approval and final disbursal, our team stands by your side.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="relative">
-                    <div class="rounded-3xl overflow-hidden glass-card p-3 border border-white/10 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80" alt="Real Estate Consultation" class="w-full h-auto rounded-2xl object-cover">
-                    </div>
-                    <!-- Floating Badge -->
-                    <div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl border border-amber-500/30 flex items-center gap-4 hidden sm:flex">
-                        <div class="w-12 h-12 rounded-full bg-amber-500 flex items-center justify-center text-slate-950 font-bold text-xl">
-                            <i class="fa-solid fa-handshake"></i>
-                        </div>
-                        <div>
-                            <span class="text-white font-bold block text-sm">Dedicated Legal Advisors</span>
-                            <span class="text-slate-400 text-xs">End-to-End Personal Support</span>
-                        </div>
+                    <div class="glass-card p-4 rounded-3xl border border-amber-500/30 overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80" alt="Karavali Enterprises Team Consultation" class="w-full h-80 sm:h-96 object-cover rounded-2xl">
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Contact & Direct Call/WhatsApp Section -->
     <section id="contact" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12">
-                <!-- Left Side Contact Info -->
+                
+                <!-- Contact Details Left Column -->
                 <div class="lg:col-span-5 space-y-6">
-                    <span class="text-amber-400 font-bold text-xs uppercase tracking-widest block">Get In Touch</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let's Discuss Your Dream Property Today</h2>
-                    <p class="text-slate-400 text-sm">Contact our representative directly or fill out the form for quick assistance.</p>
+                    <span class="text-amber-400 font-bold text-xs uppercase tracking-widest block">Contact Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        For Hidden Information & Loan Assistance
+                    </h2>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Speak directly with our senior financial advisors or property consultants. Call us now or send a direct WhatsApp message.
+                    </p>
 
-                    <!-- Contact Detail Cards -->
-                    <div class="space-y-4 pt-4">
-                        <a href="tel:9606017160" class="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-amber-500/40 transition">
-                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-400 block">Direct Phone Call</span>
-                                <span class="text-white font-bold text-base">+91 9606017160</span>
-                            </div>
-                        </a>
-
-                        <a href="https://wa.me/919606017160?text=Hello%20Karavali%20Enterprises,%20I%20would%20like%20to%20inquire%20about%20your%20luxury%20properties." target="_blank" class="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-emerald-500/40 transition">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-400 block">WhatsApp Chat</span>
-                                <span class="text-emerald-400 font-bold text-base">Chat (+91 9606017160)</span>
-                            </div>
-                        </a>
-
-                        <div class="flex items-center gap-4 p-4 rounded-xl glass-card">
-                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-400 block">Location</span>
-                                <span class="text-white font-semibold text-sm">Karavali Coastal Region, Karnataka</span>
-                            </div>
+                    <!-- Direct Hotline Phone Box from Poster -->
+                    <div class="glass-card p-6 rounded-2xl border-amber-500/40 bg-gradient-to-br from-amber-500/10 to-transparent space-y-4">
+                        <span class="text-xs text-amber-400 font-extrabold uppercase tracking-widest block">Direct Phone Lines</span>
+                        <div class="space-y-3">
+                            <a href="tel:8105951686" class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 transition">
+                                <span class="text-xs text-slate-300 font-medium">Primary Hotline</span>
+                                <span class="text-base font-extrabold text-amber-400"><i class="fa-solid fa-phone mr-2"></i>81059 51686</span>
+                            </a>
+                            <a href="tel:9606017160" class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 transition">
+                                <span class="text-xs text-slate-300 font-medium">Secondary Hotline</span>
+                                <span class="text-base font-extrabold text-amber-400"><i class="fa-solid fa-phone mr-2"></i>96060 17160</span>
+                            </a>
                         </div>
                     </div>
+
+                    <a href="https://wa.me/919606017160?text=Hello%20Karavali%20Enterprises,%20I%20am%20looking%20for%20Loan%20%26%20Property%20Assistance." target="_blank" class="w-full py-4 rounded-2xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-600/30 transition text-sm font-bold flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Instant WhatsApp Assistance</span>
+                    </a>
                 </div>
 
-                <!-- Right Side Interactive Form -->
+                <!-- Contact Form Right Column -->
                 <div class="lg:col-span-7">
-                    <div class="glass-card p-8 rounded-3xl border border-white/10 shadow-2xl">
-                        <h3 class="text-2xl font-bold text-white mb-6">Send An Inquiry</h3>
-                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl border border-amber-500/30">
+                        <h3 class="text-2xl font-bold text-white mb-2">Request A Callback</h3>
+                        <p class="text-xs text-slate-400 mb-6">Fill in your details to receive prompt guidance from our team.</p>
+
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-2">Your Full Name</label>
-                                <input type="text" required placeholder="e.g. Ramesh Kumar" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name</label>
+                                <input type="text" id="contact-name" required placeholder="e.g. Rahul Shetty" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
                             </div>
 
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-2">Phone Number</label>
-                                    <input type="tel" required placeholder="e.g. 9876543210" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone Number</label>
+                                    <input type="tel" id="contact-phone" required placeholder="e.g. 9876543210" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-2">Property Interest</label>
-                                    <select id="service-select" class="w-full px-4 py-3 rounded-xl glass-input text-sm bg-slate-900 text-white">
-                                        <option value="Luxury Villa">Luxury Villa</option>
-                                        <option value="Coastal Beach House">Coastal Beach House</option>
-                                        <option value="Smart Residential Estate">Smart Residential Estate</option>
-                                        <option value="Plot / Land Inquiry">Plot / Land Inquiry</option>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Service Required</label>
+                                    <select id="contact-service" class="w-full px-4 py-3 rounded-xl glass-input text-sm bg-slate-900 text-white">
+                                        <option value="Home Loan">Home Loan</option>
+                                        <option value="Business Loan">Business Loan</option>
+                                        <option value="Vehicle Loan">Vehicle Loan</option>
+                                        <option value="MSME Loan">MSME Loan (₹10L - ₹15Cr)</option>
+                                        <option value="Luxury Villa Purchase">Luxury Villa Purchase</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-2">Your Message / Preferred Features</label>
-                                <textarea rows="4" placeholder="Tell us about location preference, BHK requirements, or questions..." class="w-full px-4 py-3 rounded-xl glass-input text-sm"></textarea>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Your Message / Requirements</label>
+                                <textarea id="contact-message" rows="4" placeholder="Mention loan amount required or property location preferences..." class="w-full px-4 py-3 rounded-xl glass-input text-sm"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full gold-button text-slate-950 font-bold py-4 rounded-xl text-base shadow-lg">
-                                Submit Property Inquiry
+                            <button type="submit" class="w-full gold-button font-bold py-4 rounded-xl text-sm shadow-lg shadow-amber-500/20">
+                                Submit Application Request
                             </button>
                         </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="border-t border-slate-800 py-12 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-                <!-- Brand -->
-                <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center font-bold text-slate-950 text-lg">
-                        K
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-300 to-amber-700 flex items-center justify-center font-bold text-slate-950 text-lg">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold tracking-wider text-white font-serif">KARAVALI ENTERPRISES</span>
+                            <span class="text-[9px] tracking-[0.2em] text-amber-400 font-semibold block uppercase">Loan & Property Solutions</span>
+                        </div>
                     </div>
-                    <span class="text-lg font-extrabold tracking-wider text-white">KARAVALI ENTERPRISES</span>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        <i>"Your Dreams... Our Support..."</i><br>
+                        Providing premium luxury homes and verified loan solutions with zero paperwork hassle across the Karavali region.
+                    </p>
                 </div>
 
-                <div class="text-xs text-slate-400">
-                    &copy; 2026 Karavali Enterprises. All rights reserved. Premium coastal villas & real estate solutions.
+                <div class="md:col-span-3 space-y-2">
+                    <h4 class="text-xs font-extrabold text-amber-400 uppercase tracking-wider mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#properties" class="hover:text-amber-400 transition">Properties</a></li>
+                        <li><a href="#loans" class="hover:text-amber-400 transition">Home Loans</a></li>
+                        <li><a href="#loans" class="hover:text-amber-400 transition">Business Loans</a></li>
+                        <li><a href="#loans" class="hover:text-amber-400 transition">Vehicle Loans</a></li>
+                        <li><a href="#loans" class="hover:text-amber-400 transition">MSME Loans</a></li>
+                    </ul>
                 </div>
 
-                <!-- Quick Call Icon -->
-                <a href="tel:9606017160" class="text-amber-400 hover:text-white text-sm font-semibold flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>9606017160</span>
-                </a>
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-xs font-extrabold text-amber-400 uppercase tracking-wider mb-3">Contact Information</h4>
+                    <p class="text-xs text-slate-300 flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-amber-400"></i>
+                        <span>81059 51686 / 96060 17160</span>
+                    </p>
+                    <p class="text-xs text-slate-300 flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-amber-400"></i>
+                        <span>Karavali Coastal Region, Karnataka</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Mandatory Poster Legal Disclaimer -->
+            <div class="pt-8 text-center sm:text-left space-y-3">
+                <p class="text-[10px] text-slate-500 leading-relaxed">
+                    *Loan approval, amount, collateral requirements and terms are subject to lender eligibility and applicable policies.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 pt-2">
+                    <span>&copy; 2026 KARAVALI ENTERPRISES. All rights reserved.</span>
+                    <span class="text-amber-400 font-semibold mt-2 sm:mt-0">Your Financial Partner for a Better Tomorrow</span>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Inquiry Modal -->
     <div id="modal-overlay" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-card max-w-lg w-full p-6 sm:p-8 rounded-3xl border border-white/10 relative shadow-2xl">
+        <div class="glass-card max-w-md w-full p-6 sm:p-8 rounded-3xl border border-amber-500/40 relative shadow-2xl">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
 
-            <h3 class="text-2xl font-bold text-white mb-2">Quick Property Inquiry</h3>
-            <p id="modal-subtitle" class="text-xs text-slate-400 mb-6">Connect with Karavali Enterprises expert advisor instantly.</p>
+            <h3 class="text-2xl font-bold text-white mb-1">Instant Inquiry Form</h3>
+            <p id="modal-subtitle" class="text-xs text-slate-400 mb-6">KARAVALI ENTERPRISES — Loan & Property Solutions</p>
 
             <form onsubmit="handleModalSubmit(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1">Name</label>
-                    <input type="text" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
+                    <input type="text" id="modal-name" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
                 </div>
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
-                    <input type="tel" id="modal-phone" required placeholder="Enter 10-digit phone number" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                    <input type="tel" id="modal-phone" required placeholder="Enter 10-digit mobile number" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1">Property</label>
-                    <input type="text" id="modal-service" readonly class="w-full px-4 py-3 rounded-xl glass-input text-sm text-amber-400 font-semibold bg-slate-900/50">
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Selected Interest</label>
+                    <input type="text" id="modal-service" readonly class="w-full px-4 py-3 rounded-xl glass-input text-sm text-amber-400 font-bold bg-slate-900/80">
                 </div>
-                <button type="submit" class="w-full gold-button text-slate-950 font-bold py-3.5 rounded-xl text-sm">
-                    Request Pricing & Details
+                <button type="submit" class="w-full gold-button font-bold py-3.5 rounded-xl text-xs shadow-lg">
+                    Submit Via WhatsApp / Call
                 </button>
             </form>
         </div>
     </div>
 
     <script>
-        // Mobile Navigation Toggle
+        // Mobile Drawer Menu Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -612,7 +937,7 @@
         });
 
         // Modal Functionality
-        function openModal(serviceName = 'General Property Inquiry') {
+        function openModal(serviceName = 'General Loan / Property Inquiry') {
             document.getElementById('modal-service').value = serviceName;
             document.getElementById('modal-subtitle').innerText = `Inquiring for: ${serviceName}`;
             document.getElementById('modal-overlay').classList.remove('hidden');
@@ -622,21 +947,70 @@
             document.getElementById('modal-overlay').classList.add('hidden');
         }
 
-        // Handle Form Submissions & Direct to WhatsApp
-        function handleFormSubmit(e) {
+        // EMI Calculator Logic
+        const sliderAmount = document.getElementById('calc-amount');
+        const sliderRate = document.getElementById('calc-rate');
+        const sliderTenure = document.getElementById('calc-tenure');
+
+        const labelAmount = document.getElementById('calc-amount-label');
+        const labelRate = document.getElementById('calc-rate-label');
+        const labelTenure = document.getElementById('calc-tenure-label');
+
+        const resEmi = document.getElementById('res-emi');
+        const resInterest = document.getElementById('res-interest');
+        const resTotal = document.getElementById('res-total');
+
+        function formatINR(val) {
+            return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(val);
+        }
+
+        function calculateEMI() {
+            const P = parseFloat(sliderAmount.value);
+            const r = parseFloat(sliderRate.value) / 12 / 100;
+            const n = parseFloat(sliderTenure.value) * 12;
+
+            labelAmount.innerText = formatINR(P);
+            labelRate.innerText = sliderRate.value + '%';
+            labelTenure.innerText = sliderTenure.value + ' Years';
+
+            // EMI Formula: [P x R x (1+R)^N]/[(1+R)^N-1]
+            const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            const totalPayable = emi * n;
+            const totalInterest = totalPayable - P;
+
+            resEmi.innerText = formatINR(Math.round(emi));
+            resInterest.innerText = formatINR(Math.round(totalInterest));
+            resTotal.innerText = formatINR(Math.round(totalPayable));
+        }
+
+        if (sliderAmount) {
+            sliderAmount.addEventListener('input', calculateEMI);
+            sliderRate.addEventListener('input', calculateEMI);
+            sliderTenure.addEventListener('input', calculateEMI);
+            calculateEMI();
+        }
+
+        // Form Handlers (Connecting directly to WhatsApp)
+        function handleContactSubmit(e) {
             e.preventDefault();
-            const service = document.getElementById('service-select').value;
-            const message = encodeURIComponent(`Hello Karavali Enterprises, I submitted an inquiry for ${service}. Please contact me with pricing and details.`);
-            window.open(`https://wa.me/919606017160?text=${message}`, '_blank');
+            const name = document.getElementById('contact-name').value;
+            const phone = document.getElementById('contact-phone').value;
+            const service = document.getElementById('contact-service').value;
+            const messageText = document.getElementById('contact-message').value;
+
+            const text = encodeURIComponent(`Hello Karavali Enterprises,\n\nName: ${name}\nPhone: ${phone}\nInterest: ${service}\nMessage: ${messageText}`);
+            window.open(`https://wa.me/919606017160?text=${text}`, '_blank');
         }
 
         function handleModalSubmit(e) {
             e.preventDefault();
-            const service = document.getElementById('modal-service').value;
+            const name = document.getElementById('modal-name').value;
             const phone = document.getElementById('modal-phone').value;
-            const message = encodeURIComponent(`Hello Karavali Enterprises, I am interested in ${service}. Please share pricing and details. Phone: ${phone}`);
+            const service = document.getElementById('modal-service').value;
+
+            const text = encodeURIComponent(`Hello Karavali Enterprises,\n\nI would like to inquire about: ${service}\nName: ${name}\nPhone: ${phone}`);
             closeModal();
-            window.open(`https://wa.me/919606017160?text=${message}`, '_blank');
+            window.open(`https://wa.me/919606017160?text=${text}`, '_blank');
         }
     </script>
 </body>
